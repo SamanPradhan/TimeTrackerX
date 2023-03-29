@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Admin Dashboard </title>
+    <link rel="stylesheet" href="./src css/dashboard_projects.css">
+    <link rel="icon" type="image/x-icon" href="./Photos/logo1.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details" id="logo_bg" onclick="location.href=`../index.html`">
+            <!-- logo -->
+            <img style="width:70%; margin-top: 20px; margin-left: 20px;" src="src img/timetrackerxAsset 4@4x-8.png"
+                alt="">
+        </div>
+        <ul class="nav-links">
+            <li style="background-color: #081D45;">
+                <a href="./dashboard_home.html">
+                    <i class='fas fa-desktop'></i>
+                    <span class="links_name">My TimeTrackerX</span>
+                </a>
+            </li>
+            <li>
+                <a href="./dashboard_teamMembers.html">
+                    <i class='fas fa-users'></i>
+                    <span class="links_name">Team Members</span>
+                </a>
+            </li>
+            <li>
+                <a href="./dashboard_projects.html" class="active">
+                    <i class='fas fa-folder'></i>
+                    <span class="links_name">Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="./dashboard_workSchedules.html">
+                    <i class='fas fa-briefcase'></i>
+                    <span class="links_name">Work Schedules</span>
+                </a>
+            </li>
+            <li>
+                <a href="delete_product.html">
+                    <i class='fas fa-calendar-alt'></i>
+                    <span class="links_name">Bookings</span>
+                </a>
+            </li>
+            <li>
+                <a href="userdata.html">
+                    <i class='fas fa-chart-bar'></i>
+                    <span class="links_name">Reports</span>
+                </a>
+            </li>
+
+
+            <li class="log_out">
+                <a href="../index.html">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Dashboard</span>
+            </div>
+            <!-- <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class='bx bx-search'></i>
+            </div> -->
+            <div class="profile-details" id="profile-details">
+                <!-- Imageg -->
+                <div id="img-admin"></div>
+                <!-- Admin name -->
+                <span class="admin_name">Hey <span id="admin_name"></span></span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+        </nav>
+
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Items</div>
+                        <div class="number" id="totalApicount">0</div>
+
+                    </div>
+
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Newly Add</div>
+                        <div class="number" id="NewlyAdd">0</div>
+
+                    </div>
+
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Edited</div>
+                        <div class="number" id="TotalEdited">0</div>
+
+                    </div>
+
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Deleted Items</div>
+                        <div class="number" id="TotalDelete">0</div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="sales-boxes">
+                <div class="recent-sales box">
+                    <div class="title">Admin Details :-</div>
+                    <div class="sales-details">
+                        <!-- Fetch Admin Details -->
+                    </div>
+                </div>
+                <div class="top-sales box">
+                    <div class="title">Admin's Team</div>
+                    <ul class="top-sales-details">
+
+                        <li>Saman Pradhan (Team Lead).</li>
+                        <li>Ezhar Ashraf (Team Member)</li>
+                        <li>Mayur Bagul (Team Member)</li>
+                        <li>Chandan Kumar (Team Member)</li>
+                        <li>Rekha Rawat (Team Member)</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="src js/dashboard_projects.js"></script>
+
+</body>
+
+</html>
