@@ -2,6 +2,7 @@ const express = require("express");
 const { connection } = require("./db");
 const { userRouter } = require("./routes/user.routes");
 const { projectRouter } = require("./routes/project.routes");
+const { workRouter } = require("./routes/workSchedule.routes");
 const { auth } = require("./middleware/auth.middleware");
 
 const cors = require("cors");
@@ -12,6 +13,7 @@ app.use(cors());
 app.use("/users", userRouter);
 app.use(auth);
 app.use("/projects", projectRouter);
+app.use("/works", workRouter);
 app.listen(process.env.port, async () => {
   try {
     await connection;

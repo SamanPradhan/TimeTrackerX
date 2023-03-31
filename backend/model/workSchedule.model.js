@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const workSchema = mongoose.Schema(
   {
     description: String,
-    workingFrom: Number,
+    workingFrom: String,
     startTime: Number,
     endTime: Number,
     duration: Number,
@@ -15,7 +15,7 @@ const workSchema = mongoose.Schema(
   }
 );
 
-const workModel = mongoose.model("project", workSchema);
+const workModel = mongoose.model("workSchedule", workSchema);
 
 module.exports = {
   workModel,
@@ -23,9 +23,10 @@ module.exports = {
 
 /*
 {
-    "projectName": "making whole backend of website",
-    "perHourCharge": 150,
-    "estimateCost": 12000,
-    "estimateTime": 12
+    "description": "Need to work on website",
+    "workingFrom": "Home",
+    "startTime": 1500,
+    "endTime": 1700,
+    "duration": 2
   }
   */
