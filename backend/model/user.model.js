@@ -20,3 +20,14 @@ const UserModel = mongoose.model("user", userSchema);
 module.exports = {
   UserModel,
 };
+
+/*
+{
+    "email": "saman@gmail.com",
+    "password": "joio0",
+    "phoneNo": 999999,
+    "company": "Sfurte tech",
+    "designation": "Backend Developer",
+    "companyIndustry": "streaming service",
+  }
+  */

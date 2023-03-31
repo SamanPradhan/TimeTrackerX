@@ -5,13 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
-    <title>Register | DeskTime</title>
+    <title>Login | TimeTrackerX</title>
 
-    <meta name="description"
-        content="Register to get your free trial of DeskTime and enjoy the full set of time tracking and productivity monitoring features. For companies and freelancers.">
-
-    <meta property="og:title" content="DeskTime | Register">
-    <meta property="og:image" content="/static/og/desktime.png">
 
 
     <meta name="msvalidate.01" content="7E7149BB0536D28D683B219D73FAAF68" />
@@ -62,23 +57,13 @@
                     <div class="page-auth">
                         <h3 class="dt-typography-h3 font-weight-bold text-center text-md-left mb-2 mb-xl-3">Sign up and
                             start tracking</h3>
-                        <p class="mb-8 mt-2 mt-md-3 text-center text-md-left text-gray-900">Have an account? <a
-                                href="https://desktime.com/login" class="dt-link">Log in</a></p>
+                        <p class="mb-8 mt-2 mt-md-3 text-center text-md-left text-gray-900">Don't Have an account? <a
+                                href="./register.html" class="dt-link">Register</a></p>
 
                         <form class="auth-form mb-8" name="signup" action="https://desktime.com/register" method="POST"
                             class="mb-8">
-                            <input type="hidden" name="_token" value="kz3eaSxjP9A1zubm9WHZ3iFaNrBpEhFmIL2lDwV5">
-
-                            <input type="hidden" name="agreement" value="1">
-                            <input type="hidden" id="recaptcha_token" name="recaptcha_token" />
 
 
-
-                            <div class="form-group">
-                                <label for="name">First and last name</label>
-                                <input type="text" class="form-control  " id="name" name="name"
-                                    placeholder="Type in your first and last name" value="">
-                            </div>
 
                             <div class="form-group">
                                 <label for="email">Email</label>
@@ -109,14 +94,9 @@
 
                         <div class="d-flex border-top  mb-13">
                             <div class="social-logins mt-8">
-                                <p class="mb-6 font-weight-bold text-center text-md-left">Or connect with</p>
-                                <div class="logo-container d-flex flex-wrap w-100 justify-content-between">
-                                    <a class="social-icon facebook" href="https://desktime.com/auth/login/facebook"></a>
-                                    <a class="social-icon twitter" href="https://desktime.com/auth/login/twitter"></a>
-                                    <a class="social-icon linkedin" href="https://desktime.com/auth/login/linkedin"></a>
-                                    <a class="social-icon google" href="https://desktime.com/auth/login/google"></a>
-                                    <a class="social-icon apple" href="https://desktime.com/auth/login/apple"></a>
-                                </div>
+                                <a href="./register.html" class="mb-6 font-weight-bold text-center text-md-left">Or,
+                                    Register Here</a>
+
                             </div>
                         </div>
                     </div>
@@ -125,7 +105,7 @@
 
             <div class="right-container">
                 <div class="capterra-container position-relative">
-                    <img src="./index src img/login1.png"
+                    <img src="./index src img/laptop-transparent.png"
                         class="image-block-img img-fluid ls-is-cached lazyload d-none d-lg-block"
                         alt="Boost productivity">
                     <div class="g2-slider-component d-none" id="capteraSplideSlider">
@@ -365,46 +345,6 @@
     <script src="/assets/js/dt-js.js?id=6b92625da859de7bbbdf3a6b2b9eb579"></script>
 
 
-    <script>
-        $(document).ready(function () {
-            var capteraSplideSlider = document.getElementById('capteraSplideSlider');
-            var capteraSlider = new Splide('#capteraSlider', {
-                type: 'loop',
-                perMove: 1,
-                perPage: 1,
-                dots: false,
-                focus: 'center',
-                autoplay: false,
-                pagination: false,
-                classes: {
-                    prev: 'splide__arrow--prev dt-icon-arrow-back-1 dt-icon__size--32 text-white',
-                    next: 'splide__arrow--next dt-icon-arrow-forward-1 dt-icon__size--32 text-white',
-                },
-            })
-
-            capteraSlider.on('mounted', function () {
-                capteraSplideSlider.classList.remove('d-none')
-            });
-
-            capteraSlider.mount();
-
-            $('form').on('submit', function () {
-                $(this).find('button[type=submit]')
-                    .prop('disabled', true)
-                    .addClass('disabled');
-            });
-
-            removeErrorOnType(document.querySelector('.auth-form'));
-        });
-    </script>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBW6JKX" height="0" width="0"
-            style="display:none;visibility:hidden">
-        </iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <script>
         function recaptchaScript() {
             var recaptcha_token_input = document.getElementById("recaptcha_token");
