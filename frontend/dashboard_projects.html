@@ -18,46 +18,23 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/kphjfdjkmhnoamhfacepmnlfmmmdedoj">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
     <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#6CB123">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="https://plus.google.com/110645351171441570048" rel="publisher">
-    <link href="https://plus.google.com/110645351171441570048?rel=author" rel="author">
-    <link type="text/plain" rel="author" href="/humans.txt">
 
-    <link rel="stylesheet" href="/assets/old-design/old-app.css?id=dd2c6106bbceda67c54308195dc2705d">
-    <link rel="stylesheet" href="/assets/external/external-styles.css?id=265843acf377f342196e519a6b8820f1">
-    <link rel="stylesheet" href="/assets/design/dist/app.min.css?id=9519959ec55b93cea348995a4c2430ab">
-    <link rel="stylesheet" href="/assets/design/app-styles.css?id=91061335ba9b1767222b7ab926e7a827">
-    <link rel="stylesheet" href="https://desktime.com/vendor/desktime/webtimer/app.css?id=84bfafa897e1eab20015">
+    <link href="./src css/login.css" rel="stylesheet" media="all">
+    <link href="./src css/login2.css" rel="stylesheet" media="all">
+    <link href="./src css/login3.css" rel="stylesheet" media="all">
+    <link href="./src css/login4.css" rel="stylesheet" media="all">
+    <link href="./src css/login5.css" rel="stylesheet" media="all">
+    <link href="./src css/dashboard_projects.css" rel="stylesheet" media="all">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Tag Manager -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
 
-
-        dataLayer.push({ "account_id": 179289, "user_role": "owner", "user_id": 524590, "account_type": "team", "account_status": "trial-started", "account_app_downloaded": false, "account_create_team": false, "account_team_added": false, "account_project_created": false, "account_time_tracked": false, "account_settings_set": true, "account_payment_added": false });
-
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NBW6JKX');
-
-    </script>
-    <!-- End Google Tag Manager -->
 </head>
 
 <body>
@@ -117,18 +94,60 @@
     <section class="home-section">
         <div id="promotion_banner">
             <h2>Free trial active - 10 days left</h2>
-            <button>Subsribe Now</button>
-            <button>Book a Free Demo</button>
-            <button id="myBtn">Open Pop-up</button>
+            <button id="subsribe">Subsribe Now</button>
+            <button id="bookdemo">Book a Free Demo</button>
+            <!-- <button id="myBtn">Open Pop-up</button>
 
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <p>Hello, this is a pop-up window!</p>
+                    <form class="auth-form mb-8" name="signup" id="form" class="mb-8">
+                        <div class="form-group">
+                            <label for="company">company name</label>
+                            <input type="text" class="form-control  " id="companyName" name="company"
+                                placeholder="Type in your company name" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control " id="email" name="email"
+                                placeholder="Type in your email address" value="">
+                        </div>
+
+                        <div class="form-group mb-8">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control " id="password" name="password"
+                                placeholder="Create a password" autocomplete="off">
+                        </div>
+                        <div class="form-group mb-8">
+                            <label for="phoneNo">Phone No</label>
+                            <input type="number" class="form-control " id="phoneNo" name="phoneNo"
+                                placeholder="Enter a Phone No" autocomplete="on">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="designation">Your designation</label>
+                            <input type="text" class="form-control  " id="designation" name="designation"
+                                placeholder="Type in your designation">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyIndustry">Your Company industry</label>
+                            <input type="text" class="form-control  " id="companyIndustry" name="companyIndustry"
+                                placeholder="Type in your company industry">
+                        </div>
+
+
+
+
+                        <button type="submit" class="btn btn-md btn-primary btn-block mt-8">Sign up for
+                            free</button>
+                    </form>
+
                 </div>
-            </div>
+            </div> -->
         </div>
-        <nav>
+        <nav style="position:initial;width: 100%;">
             <div class="sidebar-button" class="search-box">
 
                 <i class='bx bx-menu sidebarBtn'></i>
@@ -146,63 +165,89 @@
                     <i class='bx bx-chevron-down'></i>
                 </div>
         </nav>
+        <br><br><br>
+        <br>
+        <div id="heading">
 
+            <h1 id="prh">Projects</h1>
+            <!-- <button id="newproject">NEW PROJECT</button> -->
+            <button id="myBtn">NEW PROJECT</button>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form class="auth-form mb-8" name="signup" id="form" class="mb-8">
+                        <div class="form-group">
+                            <label for="projectName">Project Name</label>
+                            <input type="text" class="form-control  " id="projectName" name="projectName"
+                                placeholder="Type in your project name" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="perHourCharge">Per Hour Charge</label>
+                            <input type="number" class="form-control " id="perHourCharge" name="perHourCharge"
+                                placeholder="Type in the per hour charge">
+                        </div>
+                        <div class="form-group">
+                            <label for="estimateCost">Estimate Cost</label>
+                            <input type="number" class="form-control " id="estimateCost" name="estimateCost"
+                                placeholder="Type in the estimate cost">
+                        </div>
+                        <div class="form-group">
+                            <label for="estimateTime">Estimate Time</label>
+                            <input type="number" class="form-control " id="estimateTime" name="estimateTime"
+                                placeholder="Type in your estimate time">
+                        </div>
+
+
+
+
+
+                        <button type="submit" class="btn btn-md btn-primary btn-block mt-8">Create New Project</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
         <div class="home-content">
             <div class="overview-boxes">
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total Items</div>
-                        <div class="number" id="totalApicount">0</div>
+                        <div class="box-topic" style="font-size:15px; color: rgb(95, 95, 95);">TOTAL AMOUNT OF PROJECTS
+                        </div>
+                        <div class="number" id="totalApicount"></div>
 
                     </div>
 
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Newly Add</div>
-                        <div class="number" id="NewlyAdd">0</div>
+                        <div class="box-topic" style="font-size:14px; color: rgb(95, 95, 95);">PROJECTS CREATED THIS
+                            MONTH</div>
+                        <div class="number" id="NewlyAdd"></div>
 
                     </div>
 
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total Edited</div>
-                        <div class="number" id="TotalEdited">0</div>
+                        <div class="box-topic" style="font-size:15px; color: rgb(95, 95, 95);">PROJECTS CREATED THIS
+                            WEEK</div>
+                        <div class="number" id="TotalEdited"></div>
 
                     </div>
 
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Deleted Items</div>
-                        <div class="number" id="TotalDelete">0</div>
+                        <div class="box-topic" style="font-size:15px; color: rgb(95, 95, 95);">Deleted Items</div>
+                        <div class="number" id="TotalDelete"></div>
 
                     </div>
 
                 </div>
             </div>
 
-            <div class="sales-boxes">
-                <div class="recent-sales box">
-                    <div class="title">Admin Details :-</div>
-                    <div class="sales-details">
-                        <!-- Fetch Admin Details -->
-                    </div>
-                </div>
-                <div class="top-sales box">
-                    <div class="title">Admin's Team</div>
-                    <ul class="top-sales-details">
-
-                        <li>Saman Pradhan (Team Lead).</li>
-                        <li>Ezhar Ashraf (Team Member)</li>
-                        <li>Mayur Bagul (Team Member)</li>
-                        <li>Chandan Kumar (Team Member)</li>
-                        <li>Rekha Rawat (Team Member)</li>
-
-                    </ul>
-                </div>
-            </div>
         </div>
     </section>
 

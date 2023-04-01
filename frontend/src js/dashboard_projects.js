@@ -34,3 +34,40 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+//adding new project
+let projectName = document.getElementById("projectName");
+let perHourCharge = document.getElementById("perHourCharge");
+let estimateCost = document.getElementById("estimateCost");
+let estimateTime = document.getElementById("estimateTime");
+let form = document.getElementById("form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  createProject();
+});
+
+async function createProject() {
+  let data = {
+    projectName: projectName.value,
+    perHourCharge: perHourCharge.value,
+    estimateCost: estimateCost.value,
+    estimateTime: estimateTime.value,
+  };
+  console.log(data);
+
+  await fetch("http://localhost:4500/projects/add", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `${localStorage.getItem("token")}`,
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      alert("New Project is created");
+    })
+    .catch((err) => console.log(err));
+}
