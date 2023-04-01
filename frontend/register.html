@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+    <title>Register | TimeTrackerX</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="./src css/login.css" rel="stylesheet" media="all">
+    <link href="./src css/login2.css" rel="stylesheet" media="all">
+    <link href="./src css/login3.css" rel="stylesheet" media="all">
+    <link href="./src css/login4.css" rel="stylesheet" media="all">
+    <link href="./src css/login5.css" rel="stylesheet" media="all">
+
+
+
+</head>
+
+<body class="auth">
+    <div class="content-wrapper-public">
+        <section id="content" class="split-container">
+            <div class="left-container">
+                <div class="left-content">
+                    <a href="../index.html" class="d-flex justify-content-center justify-content-md-start">
+                        <img class="logo mb-9 mb-sm-11 mb-xl-13" style="width: 50%;"
+                            src="./index src img/timetrackerxAsset 3@4x-8.png" alt="DeskTime time tracker">
+                    </a>
+                    <div class="page-auth">
+                        <h3 class="dt-typography-h3 font-weight-bold text-center text-md-left mb-2 mb-xl-3">Sign up and
+                            start tracking</h3>
+                        <p class="mb-8 mt-2 mt-md-3 text-center text-md-left text-gray-900">Have an account? <a
+                                href="./login.html" class="dt-link">Log in</a></p>
+
+                        <form class="auth-form mb-8" name="signup" id="form" class="mb-8">
+
+
+
+
+
+                            <div class="form-group">
+                                <label for="company">company name</label>
+                                <input type="text" class="form-control  " id="companyName" name="company"
+                                    placeholder="Type in your company name" value="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control " id="email" name="email"
+                                    placeholder="Type in your email address" value="">
+                            </div>
+
+                            <div class="form-group mb-8">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control " id="password" name="password"
+                                    placeholder="Create a password" autocomplete="off">
+                            </div>
+                            <div class="form-group mb-8">
+                                <label for="phoneNo">Phone No</label>
+                                <input type="number" class="form-control " id="phoneNo" name="phoneNo"
+                                    placeholder="Enter a Phone No" autocomplete="on">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="designation">Your designation</label>
+                                <input type="text" class="form-control  " id="designation" name="designation"
+                                    placeholder="Type in your designation">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="companyIndustry">Your Company industry</label>
+                                <input type="text" class="form-control  " id="companyIndustry" name="companyIndustry"
+                                    placeholder="Type in your company industry">
+                            </div>
+
+
+
+                            <p class="mb-0 text-center text-md-left text-gray-900">By signing up, you agree to our <a
+                                    href="https://desktime.com/terms" class="dt-link" target="_blank"
+                                    rel="noreferrer noopener">terms</a> and <a href="https://desktime.com/privacy"
+                                    class="dt-link" target="_blank" rel="noreferrer noopener">privacy policy</a>.</p>
+
+                            <button type="submit" class="btn btn-md btn-primary btn-block mt-8">Sign up for
+                                free</button>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-container">
+                <div class="capterra-container position-relative">
+                    <img src="./index src img/login1.png"
+                        class="image-block-img img-fluid ls-is-cached lazyload d-none d-lg-block"
+                        alt="Boost productivity">
+
+                </div>
+            </div>
+    </div>
+    </section>
+    </div>
+
+
+    <!--    
+    <script>
+        function recaptchaScript() {
+            var recaptcha_token_input = document.getElementById("recaptcha_token");
+
+            if (recaptcha_token_input) {
+                var recaptcha_script = document.createElement('script');
+                recaptcha_script.onload = function () {
+                    grecaptcha.ready(function () {
+                        function recaptcha_execute(callback) {
+                            grecaptcha.execute('6LfiRpkUAAAAAEIOzxFzW9Ftvd5xXeYQ05nTYNIS', { action: 'homepage' }).then(function (token) {
+                                recaptcha_token_input.value = token;
+                                callback();
+                            });
+                        }
+
+                        function recaptcha_timeout() {
+                            setTimeout(function () {
+                                recaptcha_execute(function () {
+                                    recaptcha_timeout();
+                                });
+                            }, 1000 * 60 * 6);
+                        }
+
+                        recaptcha_execute(function () {
+                            recaptcha_timeout();
+                        });
+                    });
+                };
+
+                recaptcha_script.src = "https://www.google.com/recaptcha/api.js?render=6LfiRpkUAAAAAEIOzxFzW9Ftvd5xXeYQ05nTYNIS";
+
+                document.head.appendChild(recaptcha_script);
+            }
+        }
+
+        recaptchaScript();
+        $(document).on('shown.bs.modal', function () {
+            recaptchaScript();
+        });
+    </script>
+ -->
+
+    <script src="./src js/register.js"></script>
+
+
+
+
+</body>
+
+</html>
