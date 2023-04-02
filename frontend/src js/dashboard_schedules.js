@@ -148,10 +148,10 @@ let form2 = document.getElementById("form2");
 
 form2.addEventListener("submit", (e) => {
   e.preventDefault();
-  createProject();
+  createProject1();
 });
 
-async function createProject() {
+async function createProject1() {
   let data = {
     reason: reason.value,
     date: date.value,
