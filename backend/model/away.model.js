@@ -5,8 +5,8 @@ const awaySchema = mongoose.Schema(
   {
     reason: String,
     date: Date,
-    startTime: Number,
-    endTime: Number,
+    startTime2: Number,
+    endTime2: Number,
     userID: String,
   },
   {
