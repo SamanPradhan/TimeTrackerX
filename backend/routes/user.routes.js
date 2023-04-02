@@ -48,6 +48,20 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
+//getting projects
+userRouter.get("/", async (req, res) => {
+  const token = req.headers.authorization;
+  const decoded = jwt.verify(token, "timetrack");
+  console.log(decoded, token);
+  try {
+    if (decoded) {
+      const users = await UserModel.find();
+      res.status(200).send(users);
+    }
+  } catch (err) {
+    res.status(400).send({ msg: "login error", error: err.message });
+  }
+});
 module.exports = {
   userRouter,
 };
