@@ -1,3 +1,10 @@
+let totalApicount = document.getElementById("totalApicount");
+let NewlyAdd = document.getElementById("NewlyAdd");
+let TotalEdited = document.getElementById("TotalEdited");
+let TotalDelete = document.getElementById("TotalDelete");
+
+let deleteItem = JSON.parse(localStorage.getItem("deleteItem")) || 0;
+let edititem = JSON.parse(localStorage.getItem("edititem")) || 0;
 let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");
 sidebarBtn.onclick = function () {
@@ -11,6 +18,7 @@ let Admin_data = JSON.parse(localStorage.getItem("admin_data"));
 
 // Get the modal
 var modal = document.getElementById("myModal");
+var modal2 = document.getElementById("myModal2");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -89,6 +97,7 @@ function showProducts() {
     .then((res) => {
       console.log(res);
       display(res);
+      localStorage.setItem("itemLength", JSON.stringify(res.length));
     })
     .catch((err) => console.log(err));
 }
@@ -119,8 +128,14 @@ function display(data) {
     deleteBtn.addEventListener("click", () => {
       console.log(JSON.stringify(element._id));
       deleteNotes(element._id);
+      deleteItem++;
+      localStorage.setItem("deleteItem", JSON.stringify(deleteItem));
       location.reload();
     });
+    editBtn.onclick = function () {
+      localStorage.setItem("projectID", JSON.stringify(element._id));
+      modal2.style.display = "block";
+    };
 
     tr.append(
       pname,
@@ -154,3 +169,51 @@ function deleteNotes(projectID) {
     .catch((err) => console.log(err));
 }
 // });
+
+//editng projects
+
+let projectName2 = document.getElementById("projectName2");
+let perHourCharge2 = document.getElementById("perHourCharge2");
+let estimateCost2 = document.getElementById("estimateCost2");
+let estimateTime2 = document.getElementById("estimateTime2");
+let form2 = document.getElementById("form2");
+form2.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let projectID = JSON.parse(localStorage.getItem("projectID"));
+  console.log(projectID);
+  edtschedule(projectID);
+  edititem++;
+  localStorage.setItem("edititem", JSON.stringify(edititem));
+
+  // location.reload();
+});
+function edtschedule(projectID) {
+  let data = {
+    projectName: projectName2.value,
+    perHourCharge: perHourCharge2.value,
+    estimateCost: estimateCost2.value,
+    estimateTime: estimateTime2.value,
+  };
+  console.log(data);
+  fetch(
+    `https://fancy-clam-cowboy-hat.cyclic.app/projects/update/${projectID}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(data),
+    }
+  )
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      alert(JSON.stringify(res.msg));
+    })
+    .catch((err) => console.log(err));
+}
+totalApicount.innerText = JSON.parse(localStorage.getItem("itemLength"));
+TotalEdited.innerText = JSON.parse(localStorage.getItem("edititem"));
+TotalDelete.innerText = JSON.parse(localStorage.getItem("deleteItem"));
+// totalApicount.innerText = JSON.parse(localStorage.getItem("itemLength"));
