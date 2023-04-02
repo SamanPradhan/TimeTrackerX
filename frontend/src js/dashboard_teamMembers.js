@@ -3,7 +3,7 @@
 let body = document.getElementById("tbody");
 showProducts();
 function showProducts() {
-  fetch("http://localhost:4500/users/", {
+  fetch("https://fancy-clam-cowboy-hat.cyclic.app/users/", {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -50,7 +50,7 @@ deleteBtn.addEventListener("click", () => {
     // let noteId = noteid.value;
     // console.log(noteId);
     console.log();
-    fetch(`http://localhost:4500/projects/delete/${noteId}`, {
+    fetch(`https://fancy-clam-cowboy-hat.cyclic.app/projects/delete/${noteId}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

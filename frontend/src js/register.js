@@ -1,37 +1,3 @@
-// $(document).ready(function () {
-//   var capteraSplideSlider = document.getElementById("capteraSplideSlider");
-//   var capteraSlider = new Splide("#capteraSlider", {
-//     type: "loop",
-//     perMove: 1,
-//     perPage: 1,
-//     dots: false,
-//     focus: "center",
-//     autoplay: false,
-//     pagination: false,
-//     classes: {
-//       prev: "splide__arrow--prev dt-icon-arrow-back-1 dt-icon__size--32 text-white",
-//       next: "splide__arrow--next dt-icon-arrow-forward-1 dt-icon__size--32 text-white",
-//     },
-//   });
-
-//   capteraSlider.on("mounted", function () {
-//     capteraSplideSlider.classList.remove("d-none");
-//   });
-
-//   capteraSlider.mount();
-
-//   $("form").on("submit", function () {
-//     $(this)
-//       .find("button[type=submit]")
-//       .prop("disabled", true)
-//       .addClass("disabled");
-//   });
-
-//   removeErrorOnType(document.querySelector(".auth-form"));
-// });
-
-//registering
-
 let email = document.getElementById("email");
 let password = document.getElementById("password");
 let companyName = document.getElementById("companyName");
@@ -56,7 +22,7 @@ async function registerUser() {
   };
   console.log(data);
 
-  await fetch("http://localhost:4500/users/register", {
+  await fetch("https://fancy-clam-cowboy-hat.cyclic.app/users/register", {
     method: "POST",
     headers: {
       "Content-type": "application/json",

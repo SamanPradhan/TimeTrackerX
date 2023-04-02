@@ -1,6 +1,7 @@
 // Get the modal
 var modal = document.getElementById("myModal");
 var modal2 = document.getElementById("myModal2");
+var modal3 = document.getElementById("myModal3");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -20,6 +21,7 @@ btn2.onclick = function () {
 span.onclick = function () {
   modal.style.display = "none";
   modal2.style.display = "none";
+  modal3.style.display = "none";
 };
 
 // When the user clicks anywhere outside of the modal, close it
@@ -30,8 +32,12 @@ window.onclick = function (event) {
   if (event.target == modal2) {
     modal2.style.display = "none";
   }
+  if (event.target == modal3) {
+    modal3.style.display = "none";
+  }
 };
 
+let form3 = document.getElementById("form3");
 //adding new work schedules
 let description = document.getElementById("description");
 let workingFrom = document.getElementById("workingFrom");
@@ -56,7 +62,7 @@ async function createProject() {
   };
   console.log(data);
 
-  await fetch("http://localhost:4500/works/add", {
+  await fetch("https://fancy-clam-cowboy-hat.cyclic.app/works/add", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -77,7 +83,7 @@ async function createProject() {
 let body = document.getElementById("tbody");
 showProducts();
 function showProducts() {
-  fetch("http://localhost:4500/works/", {
+  fetch("https://fancy-clam-cowboy-hat.cyclic.app/works/", {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -88,6 +94,7 @@ function showProducts() {
     .then((res) => {
       console.log(res);
       display(res);
+      localStorage.setItem("workLength", JSON.stringify(res.length));
     })
     .catch((err) => console.log(err));
 }
@@ -112,6 +119,10 @@ function display(data) {
       location.reload();
       //
     });
+    editBtn.onclick = function () {
+      localStorage.setItem("workID", JSON.stringify(element._id));
+      modal3.style.display = "block";
+    };
 
     description.innerText = element.description;
     workingFrom.innerText = element.workingFrom;
@@ -144,7 +155,7 @@ let form2 = document.getElementById("form2");
 form2.addEventListener("submit", (e) => {
   e.preventDefault();
   createProject1();
-  location.reload();
+  // location.reload();
 });
 
 async function createProject1() {
@@ -156,7 +167,7 @@ async function createProject1() {
   };
   console.log(data);
 
-  await fetch("http://localhost:4500/away/add", {
+  await fetch("https://fancy-clam-cowboy-hat.cyclic.app/away/add", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -178,12 +189,50 @@ function deleteschedule(workID) {
   // let noteId = noteid.value;
   // console.log(noteId);
   console.log();
-  fetch(`http://localhost:4500/works/delete/${workID}`, {
+  fetch(`https://fancy-clam-cowboy-hat.cyclic.app/works/delete/${workID}`, {
     method: "DELETE",
     headers: {
       "Content-type": "application/json",
       Authorization: `${localStorage.getItem("token")}`,
     },
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      alert(JSON.stringify(res.msg));
+    })
+    .catch((err) => console.log(err));
+}
+
+//editing work schedule
+let description3 = document.getElementById("description3");
+let workingFrom3 = document.getElementById("workingFrom3");
+let startTime3 = document.getElementById("startTime3");
+let endTime3 = document.getElementById("endTime3");
+let duration3 = document.getElementById("duration3");
+form3.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let workID = JSON.parse(localStorage.getItem("workID"));
+  console.log(workID);
+  edtschedule(workID);
+  // location.reload();
+});
+function edtschedule(workID) {
+  let data = {
+    description: description3.value,
+    workingFrom: workingFrom3.value,
+    startTime: startTime3.value,
+    endTime: endTime3.value,
+    duration: duration3.value,
+  };
+  console.log(data);
+  fetch(`https://fancy-clam-cowboy-hat.cyclic.app/works/update/${workID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `${localStorage.getItem("token")}`,
+    },
+    body: JSON.stringify(data),
   })
     .then((res) => res.json())
     .then((res) => {

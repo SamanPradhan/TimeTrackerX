@@ -16,19 +16,19 @@ awayRouter.post("/add", async (req, res) => {
 });
 
 //getting aways
-// awayRouter.get("/", async (req, res) => {
-//   const token = req.headers.authorization;
-//   const decoded = jwt.verify(token, "timetrack");
-//   console.log(decoded, token);
-//   try {
-//     if (decoded) {
-//       const aways = await awayModel.find({ userID: decoded.userID });
-//       res.status(200).send(aways);
-//     }
-//   } catch (err) {
-//     res.status(400).send({ msg: "login error", error: err.message });
-//   }
-// });
+awayRouter.get("/", async (req, res) => {
+  const token = req.headers.authorization;
+  const decoded = jwt.verify(token, "timetrack");
+  console.log(decoded, token);
+  try {
+    if (decoded) {
+      const aways = await awayModel.find({ userID: decoded.userID });
+      res.status(200).send(aways);
+    }
+  } catch (err) {
+    res.status(400).send({ msg: "login error", error: err.message });
+  }
+});
 
 //editing aways
 
