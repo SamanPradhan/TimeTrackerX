@@ -3,7 +3,7 @@ const { connection } = require("./db");
 const { userRouter } = require("./routes/user.routes");
 const { projectRouter } = require("./routes/project.routes");
 const { workRouter } = require("./routes/workSchedule.routes");
-const { awayRouter } = require("./routes/workSchedule.routes");
+const { awayRouter } = require("./routes/away.routes");
 const { auth } = require("./middleware/auth.middleware");
 
 const cors = require("cors");
