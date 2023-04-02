@@ -78,7 +78,7 @@ async function createProject() {
 let body = document.getElementById("tbody");
 showProducts();
 function showProducts() {
-  fetch("http://localhost:4500/projects/", {
+  fetch("https://fancy-clam-cowboy-hat.cyclic.app/projects/", {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -136,13 +136,16 @@ function display(data) {
 }
 
 function deleteNotes(projectID) {
-  fetch(`http://localhost:4500/projects/delete/${projectID}`, {
-    method: "DELETE",
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `${localStorage.getItem("token")}`,
-    },
-  })
+  fetch(
+    `https://fancy-clam-cowboy-hat.cyclic.app/projects/delete/${projectID}`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${localStorage.getItem("token")}`,
+      },
+    }
+  )
     .then((res) => res.json())
     .then((res) => {
       console.log(res);

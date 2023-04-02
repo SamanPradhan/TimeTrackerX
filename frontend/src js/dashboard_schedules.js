@@ -56,7 +56,7 @@ async function createProject() {
   };
   console.log(data);
 
-  await fetch("http://localhost:4500/works/add", {
+  await fetch("https://fancy-clam-cowboy-hat.cyclic.app/works/add", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -77,7 +77,7 @@ async function createProject() {
 let body = document.getElementById("tbody");
 showProducts();
 function showProducts() {
-  fetch("http://localhost:4500/works/", {
+  fetch("https://fancy-clam-cowboy-hat.cyclic.app/works/", {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -156,7 +156,7 @@ async function createProject1() {
   };
   console.log(data);
 
-  await fetch("http://localhost:4500/away/add", {
+  await fetch("https://fancy-clam-cowboy-hat.cyclic.app/away/add", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -178,7 +178,7 @@ function deleteschedule(workID) {
   // let noteId = noteid.value;
   // console.log(noteId);
   console.log();
-  fetch(`http://localhost:4500/works/delete/${workID}`, {
+  fetch(`https://fancy-clam-cowboy-hat.cyclic.app/works/delete/${workID}`, {
     method: "DELETE",
     headers: {
       "Content-type": "application/json",
