@@ -133,24 +133,36 @@
                     <span class="close">&times;</span>
                     <form class="auth-form mb-8" name="signup" id="form" class="mb-8">
                         <div class="form-group">
-                            <label for="projectName">Project Name</label>
-                            <input type="text" class="form-control  " id="projectName" name="projectName"
-                                placeholder="Type in your project name" value="">
+                            <label for="description">Work Description</label>
+                            <input type="text" class="form-control  " id="description" name="description"
+                                placeholder="Type in your Work Description" value="">
                         </div>
 
                         <div class="form-group">
-                            <label for="perHourCharge">Per Hour Charge</label>
-                            <input type="number" class="form-control " id="perHourCharge" name="perHourCharge"
-                                placeholder="Type in the per hour charge">
+                            <label for="workingFrom">Working From</label>
+
+                            <select class="form-control " name="workingFrom" id="workingFrom">
+                                <option>Choose where are you working from</option>
+                                <option value="office">Office</option>
+                                <option value="home">Home</option>
+                                <option value="awayBranch">Away Branch</option>
+                                <option value="others">Others</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="estimateCost">Estimate Cost</label>
-                            <input type="number" class="form-control " id="estimateCost" name="estimateCost"
+                            <label for="startTime">Start Time(in 24 hour format, eg: 16:00)</label>
+                            <input type="number" class="form-control " id="startTime" name="startTime"
                                 placeholder="Type in the estimate cost">
                         </div>
                         <div class="form-group">
-                            <label for="estimateTime">Estimate Time</label>
-                            <input type="number" class="form-control " id="estimateTime" name="estimateTime"
+                            <label for="startTime">End Time(in 24 hour format, eg: 16:00)</label>
+                            <label for="endTime">End Time</label>
+                            <input type="number" class="form-control " id="endTime" name="endTime"
+                                placeholder="Type in your estimate time">
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Work Duration(in hours)</label>
+                            <input type="number" class="form-control " id="duration" name="duration"
                                 placeholder="Type in your estimate time">
                         </div>
 
@@ -158,7 +170,8 @@
 
 
 
-                        <button type="submit" class="btn btn-md btn-primary btn-block mt-8">Create New Project</button>
+                        <button type="submit" class="btn btn-md btn-primary btn-block mt-8">Create New Work
+                            Schedule</button>
                     </form>
 
                 </div>
@@ -168,11 +181,12 @@
         <div id="list">
             <table id="table">
                 <thead>
-                    <td>Project Name</td>
-                    <td>Per Hour Charge</td>
-                    <td>Estimate Cost</td>
-                    <td>Estimate Time</td>
-                    <td>Note Id</td>
+                    <td>Description</td>
+                    <td>Working From</td>
+                    <td>Start Time</td>
+                    <td>End Time</td>
+                    <td>Duration</td>
+                    <td>Work Id</td>
                     <td>Edit</td>
                     <td>Delete</td>
                 </thead>
