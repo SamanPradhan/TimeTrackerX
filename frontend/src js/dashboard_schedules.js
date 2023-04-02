@@ -43,6 +43,7 @@ let form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   createProject();
+  location.reload();
 });
 
 async function createProject() {
@@ -101,43 +102,37 @@ function display(data) {
     let startTime = document.createElement("td");
     let endTime = document.createElement("td");
     let duration = document.createElement("td");
-    let workId = document.createElement("td");
+
+    let editBtn = document.createElement("td");
+    let deleteBtn = document.createElement("td");
+
+    deleteBtn.addEventListener("click", () => {
+      console.log(element._id);
+      deleteschedule(element._id);
+      location.reload();
+      //
+    });
 
     description.innerText = element.description;
     workingFrom.innerText = element.workingFrom;
     startTime.innerText = element.startTime;
     endTime.innerText = element.endTime;
     duration.innerText = element.duration;
-    workId.innerText = element._id;
-    tr.append(description, workingFrom, startTime, endTime, duration, workId);
+    editBtn.innerText = "Edit";
+    deleteBtn.innerText = "Delete";
+    tr.append(
+      description,
+      workingFrom,
+      startTime,
+      endTime,
+      duration,
+
+      editBtn,
+      deleteBtn
+    );
     body.append(tr);
   });
 }
-
-// let deleteBtn = document.getElementById("deleteBtn");
-
-// deleteBtn.addEventListener("click", () => {
-//   deleteNotes();
-
-//   function deleteNotes() {
-//     // let noteId = noteid.value;
-//     // console.log(noteId);
-//     console.log();
-//     fetch(`http://localhost:4500/works/delete/${workID}`, {
-//       method: "DELETE",
-//       headers: {
-//         "Content-type": "application/json",
-//         Authorization: `${localStorage.getItem("token")}`,
-//       },
-//     })
-//       .then((res) => res.json())
-//       .then((res) => {
-//         console.log(res);
-//         alert(JSON.stringify(res.msg));
-//       })
-//       .catch((err) => console.log(err));
-//   }
-// });
 
 //adding new awaytimings
 let reason = document.getElementById("reason");
@@ -149,6 +144,7 @@ let form2 = document.getElementById("form2");
 form2.addEventListener("submit", (e) => {
   e.preventDefault();
   createProject1();
+  location.reload();
 });
 
 async function createProject1() {
@@ -167,6 +163,27 @@ async function createProject1() {
       Authorization: `${localStorage.getItem("token")}`,
     },
     body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      alert(JSON.stringify(res.msg));
+    })
+    .catch((err) => console.log(err));
+}
+
+//deleteing work schedule
+
+function deleteschedule(workID) {
+  // let noteId = noteid.value;
+  // console.log(noteId);
+  console.log();
+  fetch(`http://localhost:4500/works/delete/${workID}`, {
+    method: "DELETE",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `${localStorage.getItem("token")}`,
+    },
   })
     .then((res) => res.json())
     .then((res) => {

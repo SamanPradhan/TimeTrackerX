@@ -69,5 +69,8 @@ async function loginUser() {
       localStorage.setItem("token", res.token);
       window.location.href = "./dashboard_home.html";
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+      alert("Invalid details");
+    });
 }

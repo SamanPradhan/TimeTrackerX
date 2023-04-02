@@ -45,6 +45,7 @@ let form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   createProject();
+  location.reload();
 });
 
 async function createProject() {
@@ -104,15 +105,7 @@ function display(data) {
     let noteIdprint = document.createElement("td");
     let editBtn = document.createElement("td");
     let deleteBtn = document.createElement("td");
-    // deleteBtn.addEventListener("click", () => {
-    //   data = data.filter((ele) => {
-    //     console.log(element);
-    //     return ele.id !== element.id;
-    //   });
-    //   // localStorage.setItem("data", JSON.stringify(CartArr));
-    //   display(data);
-    //   alert("The Project is deleted");
-    // });
+
     pname.innerText = element.projectName;
     perhrcharge.innerText = element.perHourCharge;
     estimatecosting.innerText = element.estimateCost;
@@ -120,7 +113,15 @@ function display(data) {
     noteIdprint.innerText = element._id;
     editBtn.innerText = "edit";
     deleteBtn.innerText = "delete";
-    deleteBtn.setAttribute("id", "deleteBtn");
+    // deleteBtn.setAttribute("class", "dlt");
+    // let delbtn = document.querySelector("dlt");
+
+    deleteBtn.addEventListener("click", () => {
+      console.log(JSON.stringify(element._id));
+      deleteNotes(element._id);
+      location.reload();
+    });
+
     tr.append(
       pname,
       perhrcharge,
@@ -134,27 +135,19 @@ function display(data) {
   });
 }
 
-let deleteBtn = document.getElementById("deleteBtn");
-
-deleteBtn.addEventListener("click", () => {
-  deleteNotes();
-
-  function deleteNotes() {
-    // let noteId = noteid.value;
-    // console.log(noteId);
-    console.log();
-    fetch(`http://localhost:4500/projects/delete/${noteId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${localStorage.getItem("token")}`,
-      },
+function deleteNotes(projectID) {
+  fetch(`http://localhost:4500/projects/delete/${projectID}`, {
+    method: "DELETE",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `${localStorage.getItem("token")}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      alert(JSON.stringify(res.msg));
     })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        alert(JSON.stringify(res.msg));
-      })
-      .catch((err) => console.log(err));
-  }
-});
+    .catch((err) => console.log(err));
+}
+// });
