@@ -629,3 +629,217 @@ nav .profile-details i {
     width: calc(100% - 60px);
   }
 }
+#promotion_banner {
+  background-color: #56be00;
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+}
+#promotion_banner > h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.25rem;
+  margin: 0 0 0.5rem;
+  padding: 0;
+  color: white;
+}
+#subsribe {
+  background-color: #fff;
+  border: 2px solid #c2c5c7;
+  border-radius: 3px;
+  font-size: 13px;
+  height: 35px;
+  line-height: normal;
+  margin: -2px 0 0 16px;
+  padding: 5px 12px;
+  text-transform: uppercase;
+}
+#bookdemo {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  color: #fff;
+  margin-left: 10px;
+  padding: 5px 12px;
+  height: 35px;
+  font-size: 13px;
+}
+#heading {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px;
+  width: 97%;
+  align-items: center;
+}
+
+table {
+  margin-left: 18px;
+  width: 96%;
+}
+#myBtn {
+  background: #56be00;
+  border: 1px;
+  border-radius: 3px;
+  color: #fff;
+  margin-left: 10px;
+  padding: 5px 12px;
+  height: 50px;
+  font-size: 18px;
+}
+#prh {
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.25rem;
+  margin: 0 0 0.5rem;
+  padding: 0;
+  color: rgb(48, 48, 48);
+}
+#another {
+  background-color: #fff;
+  border: 2px solid #c2c5c7;
+  border-radius: 3px;
+  font-size: 17px;
+  height: 55px;
+  line-height: normal;
+  margin: -2px 0 0 16px;
+  padding: 5px 12px;
+  text-transform: uppercase;
+}
+thead > td {
+  height: 300px;
+  font-size: 20px;
+}
+tbody > tr > :nth-child(1) {
+  width: 200px;
+  font-size: 20px;
+}
+tbody > tr > :nth-child(2) {
+  width: 100px;
+}
+tbody > tr > :nth-child(3) {
+  width: 100px;
+  font-size: 20px;
+}
+tbody > tr > :nth-child(4) {
+  width: 100px;
+  font-size: 20px;
+}
+tbody > tr > :nth-child(5) {
+  width: 100px;
+  font-size: 20px;
+}
+tbody > tr > :nth-child(6) {
+  width: 70px;
+  font-size: 20px;
+  cursor: pointer;
+}
+tbody > tr > :nth-child(7) {
+  width: 70px;
+  font-size: 20px;
+  cursor: pointer;
+}
+table {
+  background-color: white;
+  border: 1px solid rgb(240, 240, 240);
+  text-align: center;
+}
+table th {
+  padding: 13px;
+  background-color: #eff5f5;
+  /* border: 1px solid black; */
+}
+
+table {
+  border: 1px solid rgb(240, 240, 240);
+}
+
+table th {
+  padding: 13px 0;
+  background-color: #eff5f5;
+  /* border: 1px solid black; */
+}
+
+@media only screen and (max-width: 600px) {
+  tbody > tr > :nth-child(1) {
+    width: 100px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(2) {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  tbody > tr > :nth-child(3) {
+    width: 25px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(4) {
+    width: 25px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(5) {
+    width: 25px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(6) {
+    width: 60px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(7) {
+    width: 30px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(4) {
+    width: 30px;
+  }
+  table > tbody tr {
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  tbody > tr > :nth-child(1) {
+    width: 100px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(2) {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  tbody > tr > :nth-child(3) {
+    width: 25px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(4) {
+    width: 25px;
+    font-size: 12px;
+  }
+  tbody > tr > :nth-child(5) {
+    width: 25px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(6) {
+    width: 60px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(7) {
+    width: 30px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  tbody > tr > :nth-child(4) {
+    width: 30px;
+  }
+  table > tbody tr {
+    height: 70px;
+  }
+}
