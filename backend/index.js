@@ -15,7 +15,7 @@ app.use("/users", userRouter);
 app.use(auth);
 app.use("/projects", projectRouter);
 app.use("/works", workRouter);
-// app.use("/away", awayRouter);
+app.use("/away", awayRouter);
 app.listen(process.env.port, async () => {
   try {
     await connection;
