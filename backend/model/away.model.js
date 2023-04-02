@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 const awaySchema = mongoose.Schema(
   {
     reason: String,
+    date: Date,
     startTime: Number,
     endTime: Number,
-    duration: Number,
     userID: String,
   },
   {
@@ -14,7 +14,7 @@ const awaySchema = mongoose.Schema(
   }
 );
 
-const awayModel = mongoose.model("workSchedule", awaySchema);
+const awayModel = mongoose.model("away", awaySchema);
 
 module.exports = {
   awayModel,
@@ -22,10 +22,10 @@ module.exports = {
 
 /*
 {
-    "description": "Need to work on website",
-    "workingFrom": "Home",
+    "reason": "Need to work on website",
+    "date": "345",
     "startTime": 1500,
     "endTime": 1700,
-    "duration": 2
+    "userID": 2
   }
   */
