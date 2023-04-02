@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Admin Dashboard </title>
+    <link rel="stylesheet" href="./src css/dashboard_projects.css">
+    <link rel="icon" type="image/x-icon" href="./Photos/logo1.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/kphjfdjkmhnoamhfacepmnlfmmmdedoj">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#6CB123">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#6CB123">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <link href="./src css/login.css" rel="stylesheet" media="all">
+    <link href="./src css/login2.css" rel="stylesheet" media="all">
+    <link href="./src css/login3.css" rel="stylesheet" media="all">
+    <link href="./src css/login4.css" rel="stylesheet" media="all">
+    <link href="./src css/login5.css" rel="stylesheet" media="all">
+    <link href="./src css/dashboard_projects.css" rel="stylesheet" media="all">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details" id="logo_bg" onclick="location.href=`../index.html`">
+            <!-- logo -->
+            <img style="width:70%; margin-top: 20px; margin-left: 20px;" src="src img/timetrackerxAsset 4@4x-8.png"
+                alt="">
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="./dashboard_home.html">
+                    <i class='fas fa-desktop'></i>
+                    <span class="links_name">My TimeTrackerX</span>
+                </a>
+            </li>
+            <li style="background-color: #56be00;">
+                <a href="./dashboard_teamMembers.html">
+                    <i style="color: white;" class='fas fa-users'></i>
+                    <span style="color: white; font-size: large;" class="links_name">Team Members</span>
+                </a>
+            </li>
+            <li>
+                <a href="./dashboard_projects.html" class="active">
+                    <i class='fas fa-folder'></i>
+                    <span class="links_name">Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="./dashboard_workSchedules.html">
+                    <i class='fas fa-briefcase'></i>
+                    <span class="links_name">Work Schedules</span>
+                </a>
+            </li>
+            <li>
+                <a href="delete_product.html">
+                    <i class='fas fa-calendar-alt'></i>
+                    <span class="links_name">Bookings</span>
+                </a>
+            </li>
+            <li>
+                <a href="userdata.html">
+                    <i class='fas fa-chart-bar'></i>
+                    <span class="links_name">Reports</span>
+                </a>
+            </li>
+
+
+            <li class="log_out">
+                <a href="../index.html">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div id="promotion_banner">
+            <h2>Free trial active - 10 days left</h2>
+            <button id="subsribe">Subsribe Now</button>
+            <button id="bookdemo">Book a Free Demo</button>
+        </div>
+        <nav style="position:initial;width: 100%;">
+            <div class="sidebar-button" class="search-box">
+
+                <i class='bx bx-menu sidebarBtn'></i>
+                <input type="text" id="search_box" placeholder="Search...">
+                <!-- <i class='bx bx-search'></i> -->
+            </div>
+            <div>
+
+
+                <div class="profile-details" id="profile-details">
+                    <!-- Imageg -->
+                    <div id="img-admin"></div>
+                    <!-- Admin name -->
+                    <span class="admin_name">Hey <span id="admin_name"></span></span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+        </nav>
+        <br>
+        <div id="heading">
+
+            <h1 id="prh">All team Members</h1>
+            <!-- <button id="newproject">NEW PROJECT</button> -->
+            <!-- <button id="myBtn">NEW PROJECT</button> -->
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form class="auth-form mb-8" name="signup" id="form" class="mb-8">
+                        <div class="form-group">
+                            <label for="projectName">TEAM MEMBERS</label>
+                            <input type="text" class="form-control  " id="projectName" name="projectName"
+                                placeholder="Type in your project name" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="perHourCharge">WORKING</label>
+                            <input type="number" class="form-control " id="perHourCharge" name="perHourCharge"
+                                placeholder="Type in the per hour charge">
+                        </div>
+                        <div class="form-group">
+                            <label for="estimateCost">SLACKING</label>
+                            <input type="number" class="form-control " id="estimateCost" name="estimateCost"
+                                placeholder="Type in the estimate cost">
+                        </div>
+                        <div class="form-group">
+                            <label for="estimateTime">LATE</label>
+                            <input type="number" class="form-control " id="estimateTime" name="estimateTime"
+                                placeholder="Type in your estimate time">
+                        </div>
+
+
+
+
+
+                        <button type="submit" class="btn btn-md btn-primary btn-block mt-8">Create New Project</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic" style="font-size:15px; color: rgb(95, 95, 95);">TEAM MEMBERS
+                        </div>
+                        <div class="number" id="totalApicount"></div>
+
+                    </div>
+
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic" style="font-size:14px; color: rgb(95, 95, 95);">WORKING</div>
+                        <div class="number" id="NewlyAdd"></div>
+
+                    </div>
+
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic" style="font-size:15px; color: rgb(95, 95, 95);">SLACKING</div>
+                        <div class="number" id="TotalEdited"></div>
+
+                    </div>
+
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic" style="font-size:15px; color: rgb(95, 95, 95);">LATE</div>
+                        <div class="number" id="TotalDelete"></div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div id="list">
+            <table id="table">
+                <thead>
+                    <td> Name</td>
+                    <td>Status</td>
+                    <td>Productive time</td>
+                    <td>Arrived at</td>
+                    <td>Left at</td>
+                    <td>At work</td>
+                    <td> Active project</td>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="src js/dashboard_teamMembers.js"></script>
+
+</body>
+
+</html>
