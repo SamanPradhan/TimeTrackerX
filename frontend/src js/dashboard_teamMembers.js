@@ -50,13 +50,16 @@ deleteBtn.addEventListener("click", () => {
     // let noteId = noteid.value;
     // console.log(noteId);
     console.log();
-    fetch(`https://fancy-clam-cowboy-hat.cyclic.app/projects/delete/${noteId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${localStorage.getItem("token")}`,
-      },
-    })
+    fetch(
+      `https://fancy-clam-cowboy-hat.cyclic.app/projects/delete/${noteId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${localStorage.getItem("token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
@@ -64,4 +67,9 @@ deleteBtn.addEventListener("click", () => {
       })
       .catch((err) => console.log(err));
   }
+});
+let logout = document.getElementById("logout");
+
+logout.addEventListener("click", () => {
+  localStorage.setItem("token", "");
 });

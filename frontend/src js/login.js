@@ -1,4 +1,3 @@
-
 //logging in
 
 let email = document.getElementById("email");
@@ -29,6 +28,7 @@ async function loginUser() {
       alert("login is successfull");
       console.log(res);
       localStorage.setItem("token", res.token);
+      localStorage.setItem("time", Date);
       window.location.href = "./dashboard_home.html";
     })
     .catch((err) => {

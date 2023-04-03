@@ -61,7 +61,7 @@
             <li class="log_out">
                 <a href="../index.html">
                     <i class='bx bx-log-out'></i>
-                    <span class="links_name">Log out </span>
+                    <span id="logout" class="links_name">Log out </span>
                 </a>
             </li>
         </ul>
@@ -90,24 +90,24 @@
             <div class="overview-boxes">
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total Items</div>
-                        <div class="number" id="totalApicount">0</div>
+                        <div class="box-topic">Arrival time</div>
+                        <div class="number" id="Arrivaltime">0</div>
 
                     </div>
 
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Newly Add</div>
-                        <div class="number" id="NewlyAdd">0</div>
+                        <div class="box-topic">Left time</div>
+                        <div class="number" id="Lefttime">0</div>
 
                     </div>
 
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total Edited</div>
-                        <div class="number" id="TotalEdited">0</div>
+                        <div class="box-topic">Productive time</div>
+                        <div class="number" id="Productivetime">0</div>
 
                     </div>
 
@@ -115,7 +115,7 @@
                 <div class="box">
                     <div class="right-side">
                         <div class="box-topic">Deleted Items</div>
-                        <div class="number" id="TotalDelete">0</div>
+                        <div class="number" id="Desktimetime">0</div>
 
                     </div>
 
@@ -126,7 +126,18 @@
         </div>
     </section>
 
-    <script src="src js/dashboard_projects.js"></script>
+    <script>
+        let Arrivaltime = document.getElementById("Arrivaltime")
+        let Lefttime = document.getElementById("Lefttime")
+        let Productivetime = document.getElementById("Productivetime")
+        let Desktimetime = document.getElementById("Desktimetime")
+        let logout = document.getElementById("logout")
+
+        logout.addEventListener("click", () => {
+            localStorage.setItem("token", "");
+        })
+
+    </script>
 
 </body>
 
