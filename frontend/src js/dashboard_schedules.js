@@ -116,7 +116,7 @@ function display(data) {
     deleteBtn.addEventListener("click", () => {
       console.log(element._id);
       deleteschedule(element._id);
-      location.reload();
+      // location.reload();
       //
     });
     editBtn.onclick = function () {
@@ -241,3 +241,8 @@ function edtschedule(workID) {
     })
     .catch((err) => console.log(err));
 }
+let logout = document.getElementById("logout");
+
+logout.addEventListener("click", () => {
+  localStorage.setItem("token", "");
+});
