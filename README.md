@@ -30,3 +30,7 @@ Dashboard Projects
 
 Dashboard Work Schedules
 ![screencapture-resplendent-sherbet-35363c-netlify-app-frontend-dashboard-workschedules-2023-04-03-11_57_24](https://user-images.githubusercontent.com/77447439/229428275-597d59d1-4e7d-43f5-b088-44cb4ef8c01a.png)
+
+The Tech Stack I have used here is 
+Front End - HTML,CSS, Vanilla JavaScript
+Back End - NodeJS, ExpressJS, MongoDB, Mongoose
