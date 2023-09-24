@@ -22,7 +22,7 @@ async function registerUser() {
   };
   console.log(data);
 
-  await fetch("https://fancy-clam-cowboy-hat.cyclic.app/users/register", {
+  await fetch("https://timetrackerx.onrender.com/users/register", {
     method: "POST",
     headers: {
       "Content-type": "application/json",

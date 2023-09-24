@@ -62,7 +62,7 @@ async function createProject() {
   };
   console.log(data);
 
-  await fetch("https://fancy-clam-cowboy-hat.cyclic.app/works/add", {
+  await fetch("https://timetrackerx.onrender.com/works/add", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -83,7 +83,7 @@ async function createProject() {
 let body = document.getElementById("tbody");
 showProducts();
 function showProducts() {
-  fetch("https://fancy-clam-cowboy-hat.cyclic.app/works/", {
+  fetch("https://timetrackerx.onrender.com/works/", {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -167,7 +167,7 @@ async function createProject1() {
   };
   console.log(data);
 
-  await fetch("https://fancy-clam-cowboy-hat.cyclic.app/away/add", {
+  await fetch("https://timetrackerx.onrender.com/away/add", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -189,7 +189,7 @@ function deleteschedule(workID) {
   // let noteId = noteid.value;
   // console.log(noteId);
   console.log();
-  fetch(`https://fancy-clam-cowboy-hat.cyclic.app/works/delete/${workID}`, {
+  fetch(`https://timetrackerx.onrender.com/works/delete/${workID}`, {
     method: "DELETE",
     headers: {
       "Content-type": "application/json",
@@ -226,7 +226,7 @@ function edtschedule(workID) {
     duration: duration3.value,
   };
   console.log(data);
-  fetch(`https://fancy-clam-cowboy-hat.cyclic.app/works/update/${workID}`, {
+  fetch(`https://timetrackerx.onrender.com/works/update/${workID}`, {
     method: "PATCH",
     headers: {
       "Content-type": "application/json",

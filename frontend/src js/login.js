@@ -16,7 +16,7 @@ async function loginUser() {
   };
   console.log(data);
 
-  await fetch("https://fancy-clam-cowboy-hat.cyclic.app/users/login", {
+  await fetch("https://timetrackerx.onrender.com/users/login", {
     method: "POST",
     headers: {
       "Content-type": "application/json",

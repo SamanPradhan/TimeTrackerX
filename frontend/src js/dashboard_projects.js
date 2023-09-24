@@ -69,7 +69,7 @@ async function createProject() {
   };
   console.log(data);
 
-  await fetch("http://localhost:4500/projects/add", {
+  await fetch("https://timetrackerx.onrender.com/projects/add", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -90,7 +90,7 @@ async function createProject() {
 let body = document.getElementById("tbody");
 showProducts();
 function showProducts() {
-  fetch("https://fancy-clam-cowboy-hat.cyclic.app/projects/", {
+  fetch("https://timetrackerx.onrender.com/projects/", {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -155,16 +155,13 @@ function display(data) {
 }
 
 function deleteNotes(projectID) {
-  fetch(
-    `https://fancy-clam-cowboy-hat.cyclic.app/projects/delete/${projectID}`,
-    {
-      method: "DELETE",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${localStorage.getItem("token")}`,
-      },
-    }
-  )
+  fetch(`https://timetrackerx.onrender.com/projects/delete/${projectID}`, {
+    method: "DELETE",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `${localStorage.getItem("token")}`,
+    },
+  })
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
@@ -199,17 +196,14 @@ function edtschedule(projectID) {
     estimateTime: estimateTime2.value,
   };
   console.log(data);
-  fetch(
-    `https://fancy-clam-cowboy-hat.cyclic.app/projects/update/${projectID}`,
-    {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${localStorage.getItem("token")}`,
-      },
-      body: JSON.stringify(data),
-    }
-  )
+  fetch(`https://timetrackerx.onrender.com/projects/update/${projectID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `${localStorage.getItem("token")}`,
+    },
+    body: JSON.stringify(data),
+  })
     .then((res) => res.json())
     .then((res) => {
       console.log(res);

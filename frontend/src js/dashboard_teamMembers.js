@@ -3,7 +3,7 @@
 let body = document.getElementById("tbody");
 showProducts();
 function showProducts() {
-  fetch("https://fancy-clam-cowboy-hat.cyclic.app/users/", {
+  fetch("https://timetrackerx.onrender.com/users/", {
     method: "GET",
     headers: {
       "Content-type": "application/json",
@@ -50,16 +50,13 @@ deleteBtn.addEventListener("click", () => {
     // let noteId = noteid.value;
     // console.log(noteId);
     console.log();
-    fetch(
-      `https://fancy-clam-cowboy-hat.cyclic.app/projects/delete/${noteId}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `${localStorage.getItem("token")}`,
-        },
-      }
-    )
+    fetch(`https://timetrackerx.onrender.com/projects/delete/${noteId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${localStorage.getItem("token")}`,
+      },
+    })
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
